@@ -37,7 +37,7 @@ export default function Homepage() {
       <div className="absolute h-[50px] left-0 top-0 w-[1440px]" data-name="Component 4">
         <div className="absolute bg-white inset-0" />
         <p className="[word-break:break-word] absolute font-['ABC_Diatype_Plus_Variable_Unlicensed_Trial:Regular',sans-serif] font-normal inset-[22%_82.92%_36%_0.97%] leading-[normal] not-italic text-[16px] text-black" style={{ fontVariationSettings: '"MONO" 0, "wdth" 100' }}>
-          Petra Pavlić
+          Petra Pavlić — Portfolio
         </p>
         <p className="[word-break:break-word] absolute font-['ABC_Diatype_Plus_Variable_Unlicensed_Trial:Regular',sans-serif] font-normal inset-[22%_4.31%_36%_83.75%] leading-[normal] not-italic text-[16px] text-black text-center" style={{ fontVariationSettings: '"MONO" 0, "wdth" 100' }}>
           information
