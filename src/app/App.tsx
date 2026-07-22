@@ -386,7 +386,7 @@ function HomeNav({ menuOpen, setMenuOpen, onAbout }: { menuOpen: boolean; setMen
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
       <div className="flex items-center justify-between w-full">
-        <span className="text-[14px] text-black" style={FONT}>Petra Pavlić portfolio</span>
+        <span className="text-[14px] text-black" style={FONT}>Petra Pavlić — Portfolio</span>
 
         <nav className="hidden md:flex items-center gap-10">
           <button onClick={onAbout} className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0" style={FONT}>about</button>
