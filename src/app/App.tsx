@@ -617,14 +617,14 @@ function AboutPage({ onClose }: { onClose: () => void }) {
           </div>
           <div className="md:max-w-[387px]">
             <p className="text-[14px] text-black leading-normal mb-0" style={FONT}>Zagreb, Croatia</p>
-            <a href="mailto:petra.pavlic3@gmail.com" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>petra.pavlic3@gmail.com</a>
-            <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>pavlic.petra</a>
+            <a href="mailto:petra.pavlic3@gmail.com" className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>petra.pavlic3@gmail.com</a>
+            <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>pavlic.petra</a>
           </div>
         </div>
 
         {/* Right — photo sized to match left column height */}
         <div className="md:w-[50%] md:pr-[14px] md:self-stretch flex items-start justify-end">
-          <img src={imgAbout} alt="Petra Pavlić" className="w-auto h-[60%] object-contain object-top" />
+          <img src={imgAbout} alt="Petra Pavlić" className="w-auto h-400px object-contain object-top" />
         </div>
 
       </main>
