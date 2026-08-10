@@ -3,28 +3,28 @@ import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
 
 // Homepage images
-import imgH1 from "@/imports/Homepage/25bffbe206fbd29fdf1291a8fd0033e861519974.png";
-import imgH2 from "@/imports/Homepage/c6a65768f09d5b965a1f4ec4bb1da05e44f59156.png";
-import imgH3 from "@/imports/Homepage/66567dcdda9c9ec368fc2a3c46460dbb3531d190.png";
-import imgH4 from "@/imports/Homepage/8b435e23e9d320d6b65f162147c4750cd5c79632.png";
+import imgH1 from "@/imports/Homepage/25bffbe206fbd29fdf1291a8fd0033e861519974.webp";
+import imgH2 from "@/imports/Homepage/c6a65768f09d5b965a1f4ec4bb1da05e44f59156.webp";
+import imgH3 from "@/imports/Homepage/66567dcdda9c9ec368fc2a3c46460dbb3531d190.webp";
+import imgH4 from "@/imports/Homepage/8b435e23e9d320d6b65f162147c4750cd5c79632.webp";
 
 // Project 01 detail images
-import imgP1a from "@/imports/ProjectInfo-1/9f388cccfa674d33df6f61bfeb4a12b845acb47c.png";
-import imgP1b from "@/imports/ProjectInfo-1/1d102274b3a2914eb0577f013e3e1b77ef41ac3e.png";
-import imgP1c from "@/imports/ProjectInfo-1/f8bbab8c44cd193c50b070de74db6ccdbb8807c0.png";
-import imgP1d from "@/imports/otvaranje_arhiv_kutije.jpg";
-import imgP1e from "@/imports/listanje_knjige.jpg";
-import imgKinoA from "@/imports/kinoa_plakat_mockup2.jpg";
-import imgKinoB from "@/imports/image.png";
-import imgKinoC from "@/imports/image-1.png";
-import imgKinoD from "@/imports/image-2.png";
-import imgLoneA from "@/imports/image-3.png";
-import imgLoneB from "@/imports/image-4.png";
-import imgBooklet from "@/imports/Image_20251218_0006.png";
-import imgBooklet2 from "@/imports/Image_20251218_0005.png";
-import imgBooklet3 from "@/imports/Image_20251218_0007.png";
-import imgBooklet4 from "@/imports/Image_20251218_0009.png";
-import imgBooklet5 from "@/imports/Image_20251218_0010.png";
+import imgP1a from "@/imports/ProjectInfo-1/9f388cccfa674d33df6f61bfeb4a12b845acb47c.webp";
+import imgP1b from "@/imports/ProjectInfo-1/1d102274b3a2914eb0577f013e3e1b77ef41ac3e.webp";
+import imgP1c from "@/imports/ProjectInfo-1/f8bbab8c44cd193c50b070de74db6ccdbb8807c0.webp";
+import imgP1d from "@/imports/otvaranje_arhiv_kutije.webp";
+import imgP1e from "@/imports/listanje_knjige.webp";
+import imgKinoA from "@/imports/kinoa_plakat_mockup2.webp";
+import imgKinoB from "@/imports/image.webp";
+import imgKinoC from "@/imports/image-1.webp";
+import imgKinoD from "@/imports/image-2.webp";
+import imgLoneA from "@/imports/image-3.webp";
+import imgLoneB from "@/imports/image-4.webp";
+import imgBooklet from "@/imports/Image_20251218_0006.webp";
+import imgBooklet2 from "@/imports/Image_20251218_0005.webp";
+import imgBooklet3 from "@/imports/Image_20251218_0007.webp";
+import imgBooklet4 from "@/imports/Image_20251218_0009.webp";
+import imgBooklet5 from "@/imports/Image_20251218_0010.webp";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -586,7 +586,7 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
 
 // ─── About page ───────────────────────────────────────────────────────────────
 
-import imgAbout from "@/imports/About-1/0aa7385224c5233604883be5628a0196b416bf93.png";
+import imgAbout from "@/imports/About-1/0aa7385224c5233604883be5628a0196b416bf93.webp";
 
 function AboutPage({ onClose }: { onClose: () => void }) {
   useEffect(() => {
