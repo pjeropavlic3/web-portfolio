@@ -618,7 +618,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
           <div className="md:max-w-[387px]">
             <p className="text-[14px] text-black leading-normal mb-0" style={FONT}>Zagreb, Croatia</p>
             <a href="mailto:petra.pavlic3@gmail.com" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>petra.pavlic3@gmail.com</a>
-            <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={{ ...FONT, marginRight: "14px" }}>pavlic.petra</a>
+            <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>pavlic.petra</a>
           </div>
         </div>
 
