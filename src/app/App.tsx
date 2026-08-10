@@ -623,7 +623,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
 
         {/* Right — photo sized to match left column height */}
         <div className="md:w-[50%] md:pr-[14px] md:self-stretch flex items-start">
-          <img src={imgAbout} alt="Petra Pavlić" className="w-auto h-full max-h-full object-contain object-top" />
+          <img src={imgAbout} alt="Petra Pavlić" className="w-auto h-[70%] object-contain object-top" />
         </div>
 
       </main>
