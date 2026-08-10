@@ -606,7 +606,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
         </button>
       </header>
 
-      <main className="flex-1 flex flex-col md:flex-row md:items-start px-[14px] md:px-0 pt-6 md:pt-0 pb-16 gap-8 md:gap-0">
+      <main className="flex flex-col md:flex-row md:items-start px-[14px] md:px-0 pt-6 md:pt-0 pb-6 gap-8 md:gap-0">
 
         {/* Left — bio + contact */}
         <div className="md:pl-[45px] md:w-[50%] flex flex-col gap-8">
