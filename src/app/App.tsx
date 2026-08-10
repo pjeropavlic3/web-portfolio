@@ -606,7 +606,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
         </button>
       </header>
 
-      <main className="flex flex-col md:flex-row md:items-start px-[14px] md:px-0 pt-6 md:pt-0 pb-6 gap-8 md:gap-0">
+      <main className="flex flex-col md:flex-row md:items-start px-[14px] md:px-0 pt-6 md:pt-0 pb-16 gap-8 md:gap-0">
 
         {/* Left — bio + contact */}
         <div className="md:pl-[45px] md:w-[50%] flex flex-col gap-8">
@@ -623,8 +623,8 @@ function AboutPage({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Right — photo sized to match left column height */}
-        <div className="md:w-[50%] md:pr-[14px] md:self-stretch flex items-start justify-end">
-          <img src={imgAbout} alt="Petra Pavlić" className="w-auto h-[60%] object-contain object-top" />
+        <div className="md:w-[50%] md:pr-[14px] flex justify-end items-start">
+          <img src={imgAbout} alt="Petra Pavlić" className="w-auto object-contain object-top" style={{maxHeight: "28vh", height: "28vh"}} />
         </div>
 
       </main>
