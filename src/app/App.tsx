@@ -431,12 +431,32 @@ function HomeNav({ menuOpen, setMenuOpen, onAbout }: { menuOpen: boolean; setMen
   );
 }
 
-function HomePage({ onSelect, onAbout }: { onSelect: (p: Project) => void; onAbout: () => void }) {
+function HomePage({
+  onSelect,
+  onAbout,
+}: {
+  onSelect: (p: Project) => void;
+  onAbout: () => void;
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("petra.pavlic3@gmail.com");
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  };
 
   useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+
     window.addEventListener("keydown", handleKey);
+
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
@@ -445,23 +465,74 @@ function HomePage({ onSelect, onAbout }: { onSelect: (p: Project) => void; onAbo
 
   return (
     <div className="bg-white min-h-screen" style={FONT}>
-      <HomeNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} onAbout={onAbout} />
+      <HomeNav
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        onAbout={onAbout}
+      />
+
       <main id="work" className="pt-[50px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] px-[14px] md:px-[15px]">
           <div className="flex flex-col">
-            {left.map((p) => <ProjectBlock key={p.id} project={p} onSelect={onSelect} />)}
+            {left.map((p) => (
+              <ProjectBlock
+                key={p.id}
+                project={p}
+                onSelect={onSelect}
+              />
+            ))}
           </div>
+
           <div className="flex flex-col">
-            {right.map((p) => <ProjectBlock key={p.id} project={p} onSelect={onSelect} />)}
+            {right.map((p) => (
+              <ProjectBlock
+                key={p.id}
+                project={p}
+                onSelect={onSelect}
+              />
+            ))}
           </div>
         </div>
       </main>
 
       <footer className="flex items-center justify-between pl-[14px] h-[50px]">
-        <a href="mailto:petra.pavlic3@gmail.com" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>petra.pavlic3@gmail.com</a>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={copyEmail}
+            className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity text-left p-0 bg-transparent border-none cursor-pointer"
+            style={FONT}
+          >
+            petra.pavlic3@gmail.com
+          </button>
+
+          {copied && (
+            <span
+              className="text-[12px] text-black opacity-50"
+              style={FONT}
+            >
+              Copied!
+            </span>
+          )}
+        </div>
+
         <nav className="hidden md:flex items-center gap-10 pr-[14px]">
-          <button onClick={onAbout} className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0" style={FONT}>about</button>
-          <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>instagram</a>
+          <button
+            onClick={onAbout}
+            className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
+            style={FONT}
+          >
+            about
+          </button>
+
+          <a
+            href="https://www.instagram.com/pavlic.petra/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+            style={FONT}
+          >
+            instagram
+          </a>
         </nav>
       </footer>
     </div>
