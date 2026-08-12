@@ -66,7 +66,7 @@ const PROJECTS: Project[] = [
     detailImages: [
       { type: "image", src: imgP1a, aspect: "aspect-[698/768]", caption: "Archival box with five smaller boxes, each containing an object and a written memory fragment." },
       { type: "image", src: imgP1b, aspect: "aspect-[698/492]", caption: "Detail of the publication guiding the viewer through the process of confronting an inheritance." },
-      { type: "image", src: imgP1c, aspect: "aspect-[698/756]", caption: "Publication that somes with the archival box." },
+      { type: "image", src: imgP1c, aspect: "aspect-[698/756]", caption: "Publication that comes with the archival box." },
       { type: "image", src: imgP1d, aspect: "aspect-[3/2]", caption: "Opening the archival box — the act of unpacking as a metaphor for grief and memory." },
       { type: "image", src: imgP1e, aspect: "aspect-[3/2]", caption: "Pages of the accompanying publication." },
     ],
@@ -185,7 +185,7 @@ const PROJECTS: Project[] = [
         caption: "No one like me, music video, 2025.",
       },
     ],
-    description: ["Music video created as part of a film class assignment. The video reimagines the iconic EX-YU music video by Šarlo Akrobata, adapting its visual language to reflect the feeling of a fleeting student life. It explores the uncertainty and anticipation that come with the end of a familiar chapter and explores the concept of individuality."],
+    description: ["Music video created as part of a film class assignment. The video reimagines the iconic EX-YU music video by Šarlo Akrobata, adapting its visual language to reflect the feeling of a fleeting student life. It explores the uncertainty and anticipation that come with the end of a familiar chapter, while also reflecting on the concept of individuality."],
     credits: [
       { label: "Student", value: "univ. mag. art. Petra Pavlić" },
       { label: "Mentor", value: "Herceg Stanko prof. art." },
@@ -332,10 +332,10 @@ function Lightbox({
           </div>
         ) : (
           <img
-            src={item.src}
-            alt={`${projectTitle} — ${index + 1}`}
-            className="max-h-full max-w-full object-contain min-h-0"
-          />
+  src={item.src}
+  alt={item.caption || `${projectTitle} — image ${index + 1}`}
+  className="max-h-full max-w-full object-contain min-h-0"
+/>
         )}
         {item.caption && (
           <p className="text-[11px] text-white/50 text-center max-w-lg leading-relaxed" style={FONT}>
@@ -391,7 +391,7 @@ function ProjectBlock({ project, onSelect }: { project: Project; onSelect: (p: P
       >
         <img
           src={project.thumbnailImage}
-          alt={project.title}
+          alt={`${project.title} — ${project.subtitle}`}
           className={`absolute inset-0 size-full transition-transform duration-500 ease-out group-hover:scale-[1.02] ${
             project.thumbnailFit === "cover" ? "object-cover" : "object-contain"
           }`}
@@ -633,11 +633,11 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
                 </div>
               ) : (
                 <img
-                  src={item.src}
-                  alt={`${project.title} — ${i + 1}`}
-                  className="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                  loading={i === 0 ? "eager" : "lazy"}
-                />
+  src={item.src}
+  alt={item.caption || `${project.title} — image ${i + 1}`}
+  className="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+  loading={i === 0 ? "eager" : "lazy"}
+/>
               )}
             </div>
           ))}
@@ -795,7 +795,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
         <div className="md:w-[50%] md:pr-[14px] flex justify-end items-start">
           <img
             src={imgAbout}
-            alt="Petra Pavlić"
+            alt="Petra Pavlić, visual communication designer"
             className="w-auto object-contain object-top"
             style={{
               maxHeight: "80vh",
