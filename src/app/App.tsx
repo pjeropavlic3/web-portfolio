@@ -179,14 +179,13 @@ const PROJECTS: Project[] = [
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[4/3]",
     detailImages: [
-      {
-        type: "video",
+      {type: "video",
         aspect: "aspect-[4/3]",
-        videoUrl: "<https://player.vimeo.com/video/1217595425?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        videoUrl: "https://player.vimeo.com/video/1217595425?badge=0&autopause=0&player_id=0&app_id=58479",
         caption: "No one like me, music video, 2025.",
       },
     ],
-    description: ["Music video created as part of a film class assignment. The video reimagines the iconic EX-YU music video by Šarlo Akrobata, adapting its visual language to reflect the feeling of a fleeting student life. It explores the uncertainty and anticipation that come with the end of a familiar chapter and explores the concept of individuality.],
+    description: ["Music video created as part of a film class assignment. The video reimagines the iconic EX-YU music video by Šarlo Akrobata, adapting its visual language to reflect the feeling of a fleeting student life. It explores the uncertainty and anticipation that come with the end of a familiar chapter and explores the concept of individuality."],
     credits: [
       { label: "Student", value: "univ. mag. art. Petra Pavlić" },
       { label: "Mentor", value: "Herceg Stanko prof. art." },
