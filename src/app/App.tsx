@@ -182,17 +182,15 @@ const PROJECTS: Project[] = [
       {
         type: "video",
         aspect: "aspect-[4/3]",
-        videoUrl: "https://vimeo.com/1217595425?share=copy&fl=sv&fe=ci",
+        videoUrl: "<https://player.vimeo.com/video/1217595425?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         caption: "No one like me, music video, 2025.",
       },
-      { type: "image", src: imgLoneA, aspect: "aspect-[4/3]", caption: "Film still — a gathering, family traces left in the apartment." },
-      { type: "image", src: imgLoneB, aspect: "aspect-[4/3]", caption: "Film still — archival footage of a sailboat on open water." },
     ],
-    description: ["After my grandfather's death, I return to his apartment, trying to understand who he really was. Through the objects he left behind and my own personal memories, a portrait of the man gradually takes shape. The film was created as part of a workshop at [[KinoKlub Zagreb|https://kkz.hr]] under the mentorship of Filip Peruzović, and was screened at the annual showcase at [[Kinoteka Zagreb|https://kinokinoteka.hr]]."],
+    description: ["Music video created as part of a film class assignment. The video reimagines the iconic EX-YU music video by Šarlo Akrobata, adapting its visual language to reflect the feeling of a fleeting student life. It explores the uncertainty and anticipation that come with the end of a familiar chapter and explores the concept of individuality.],
     credits: [
       { label: "Student", value: "univ. mag. art. Petra Pavlić" },
-      { label: "Mentor", value: "Filip Peruzović" },
-      { label: "Year", value: "2025./2026." },
+      { label: "Mentor", value: "Herceg Stanko prof. art." },
+      { label: "Year", value: "2024./2025." },
     ],
   },
 ];
