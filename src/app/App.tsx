@@ -613,10 +613,26 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
 import imgAbout from "@/imports/About-1/About_Petra_Pavlic.webp";
 
 function AboutPage({ onClose }: { onClose: () => void }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("petra.pavlic3@gmail.com");
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    const handleKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
     window.addEventListener("keydown", handleKey);
+
     return () => window.removeEventListener("keydown", handleKey);
   }, [onClose]);
 
@@ -624,8 +640,15 @@ function AboutPage({ onClose }: { onClose: () => void }) {
     <div className="bg-white min-h-screen flex flex-col" style={FONT}>
 
       <header className="flex items-center justify-between px-[14px] h-[47px] shrink-0">
-        <span className="text-[14px] text-black" style={FONT}>About</span>
-        <button onClick={onClose} className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer" style={FONT}>
+        <span className="text-[14px] text-black" style={FONT}>
+          About
+        </span>
+
+        <button
+          onClick={onClose}
+          className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer"
+          style={FONT}
+        >
           (close)
         </button>
       </header>
@@ -634,34 +657,86 @@ function AboutPage({ onClose }: { onClose: () => void }) {
 
         {/* Left — bio + contact */}
         <div className="md:pl-[45px] md:w-[50%] flex flex-col gap-8">
+
           <div className="md:max-w-[387px]">
-            <p className="text-[14px] text-black leading-normal mb-0 whitespace-pre-wrap" style={FONT}>{"Hi! "}</p>
-            <p className="text-[14px] text-black leading-normal mb-0 whitespace-pre-wrap" style={FONT}>{"      My name is Petra, I come from Zagreb, where I completed a Master's degree in Visual Communications at the Faculty of Architecture, University of Zagreb. I earned my Bachelor's degree from the Faculty of Graphic Arts, where I further developed my knowledge of graphic technology, editorial design, and print production."}</p>
-            <p className="text-[14px] text-black leading-normal whitespace-pre-wrap" style={FONT}>{"      I have participated in group exhibitions and contributed to the production and installation of exhibition projects. My work spans graphic design, film, and photography, and I recently presented my short film at a public screening at Kinoteka. I have a particular interest in the social dimension of design, focusing on mental health and the use of visual communication as a tool for social engagement."}</p>
+            <p
+              className="text-[14px] text-black leading-normal mb-0 whitespace-pre-wrap"
+              style={FONT}
+            >
+              {"Hi! "}
+            </p>
+
+            <p
+              className="text-[14px] text-black leading-normal mb-0 whitespace-pre-wrap"
+              style={FONT}
+            >
+              {"      My name is Petra, I come from Zagreb, where I completed a Master's degree in Visual Communications at the Faculty of Architecture, University of Zagreb. I earned my Bachelor's degree from the Faculty of Graphic Arts, where I further developed my knowledge of graphic technology, editorial design, and print production."}
+            </p>
+
+            <p
+              className="text-[14px] text-black leading-normal whitespace-pre-wrap"
+              style={FONT}
+            >
+              {"      I have participated in group exhibitions and contributed to the production and installation of exhibition projects. My work spans graphic design, film, and photography, and I recently presented my short film at a public screening at Kinoteka. I have a particular interest in the social dimension of design, focusing on mental health and the use of visual communication as a tool for social engagement."}
+            </p>
           </div>
+
           <div className="md:max-w-[387px]">
-            <p className="text-[14px] text-black leading-normal mb-0" style={FONT}>Zagreb, Croatia</p>
-            <button
-  onClick={() => navigator.clipboard.writeText("petra.pavlic3@gmail.com")}
-  className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity text-left p-0"
-  style={FONT}
->
-  petra.pavlic3@gmail.com
-</button>
-            <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={FONT}>pavlic.petra</a>
+            <p
+              className="text-[14px] text-black leading-normal mb-0"
+              style={FONT}
+            >
+              Zagreb, Croatia
+            </p>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={copyEmail}
+                className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity text-left p-0"
+                style={FONT}
+              >
+                petra.pavlic3@gmail.com
+              </button>
+
+              {copied && (
+                <span
+                  className="text-[12px] text-black opacity-50"
+                  style={FONT}
+                >
+                  Copied!
+                </span>
+              )}
+            </div>
+
+            <a
+              href="https://www.instagram.com/pavlic.petra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+              style={FONT}
+            >
+              pavlic.petra
+            </a>
           </div>
         </div>
 
         {/* Right — photo sized to match left column height */}
         <div className="md:w-[50%] md:pr-[14px] flex justify-end items-start">
-          <img src={imgAbout} alt="Petra Pavlić" className="w-auto object-contain object-top" style={{maxHeight: "80vh", height: "80vh"}} />
+          <img
+            src={imgAbout}
+            alt="Petra Pavlić"
+            className="w-auto object-contain object-top"
+            style={{
+              maxHeight: "80vh",
+              height: "80vh",
+            }}
+          />
         </div>
 
       </main>
     </div>
   );
 }
-
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
