@@ -18,6 +18,7 @@ import imgKinoA from "@/imports/kinoa_plakat_mockup2.webp";
 import imgKinoB from "@/imports/image.webp";
 import imgKinoC from "@/imports/image-1.webp";
 import imgKinoD from "@/imports/image-2.webp";
+import imgNoOne from "@/imports/vlcsnap-2026-08-12-11h52m03s408.webp";
 import imgLoneA from "@/imports/image-3.webp";
 import imgLoneB from "@/imports/image-4.webp";
 import imgBooklet from "@/imports/Image_20251218_0006.webp";
@@ -104,8 +105,8 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "04",
-    number: "04",
+    id: "03",
+    number: "03",
     title: "k. magazine",
     englishTitle: "k. magazine",
     subtitle: "Magazine Layout",
@@ -120,8 +121,8 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "05",
-    number: "05",
+    id: "04",
+    number: "04",
     title: "A lone wanderer",
     englishTitle: "A lone wanderer",
     subtitle: "Short Documentary Film",
@@ -146,8 +147,8 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "06",
-    number: "06",
+    id: "05",
+    number: "05",
     title: "Booklet of Memory",
     englishTitle: "Booklet of Memory",
     subtitle: "Side Research Project, Book Layout",
@@ -168,10 +169,36 @@ const PROJECTS: Project[] = [
       { label: "Year", value: "2025./2026." },
     ],
   },
+  {
+    id: "06",
+    number: "06",
+    title: "No one like me",
+    englishTitle: "No one like me",
+    subtitle: "Music video",
+    thumbnailImage: imgNoOne,
+    thumbnailFit: "cover",
+    thumbnailAspect: "aspect-[4/3]",
+    detailImages: [
+      {
+        type: "video",
+        aspect: "aspect-[4/3]",
+        videoUrl: "https://vimeo.com/1217595425?share=copy&fl=sv&fe=ci",
+        caption: "No one like me, music video, 2025.",
+      },
+      { type: "image", src: imgLoneA, aspect: "aspect-[4/3]", caption: "Film still — a gathering, family traces left in the apartment." },
+      { type: "image", src: imgLoneB, aspect: "aspect-[4/3]", caption: "Film still — archival footage of a sailboat on open water." },
+    ],
+    description: ["After my grandfather's death, I return to his apartment, trying to understand who he really was. Through the objects he left behind and my own personal memories, a portrait of the man gradually takes shape. The film was created as part of a workshop at [[KinoKlub Zagreb|https://kkz.hr]] under the mentorship of Filip Peruzović, and was screened at the annual showcase at [[Kinoteka Zagreb|https://kinokinoteka.hr]]."],
+    credits: [
+      { label: "Student", value: "univ. mag. art. Petra Pavlić" },
+      { label: "Mentor", value: "Filip Peruzović" },
+      { label: "Year", value: "2025./2026." },
+    ],
+  },
 ];
 
-const LEFT_PROJECT_IDS = ["01", "04", "06"];
-const RIGHT_PROJECT_IDS = ["02", "05"];
+const LEFT_PROJECT_IDS = ["01", "03", "05"];
+const RIGHT_PROJECT_IDS = ["02", "04", "06"];
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
