@@ -610,7 +610,7 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
 
 // ─── About page ───────────────────────────────────────────────────────────────
 
-import imgAbout from "@/imports/About-1/0aa7385224c5233604883be5628a0196b416bf93.webp";
+import imgAbout from "@/imports/About-1/About_Petra_Pavlic.webp";
 
 function AboutPage({ onClose }: { onClose: () => void }) {
   useEffect(() => {
