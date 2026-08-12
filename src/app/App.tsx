@@ -42,6 +42,7 @@ interface Project {
   number: string;
   title: string;
   englishTitle: string;
+  slug: string;
   subtitle: string;
   thumbnailImage: string;
   thumbnailFit: "contain" | "cover";
@@ -59,6 +60,7 @@ const PROJECTS: Project[] = [
     number: "01",
     title: "Things left behind",
     englishTitle: "Things left behind",
+    slug: "things-left-behind",
     subtitle: "Master's Thesis",
     thumbnailImage: imgH1,
     thumbnailFit: "contain",
@@ -89,6 +91,7 @@ const PROJECTS: Project[] = [
     title: "Kino A214",
     englishTitle: "Kino A214",
     subtitle: "Student Collective Project",
+    slug: "kino-a214",
     thumbnailImage: imgKinoA,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[698/873]",
@@ -110,6 +113,7 @@ const PROJECTS: Project[] = [
     title: "k. magazine",
     englishTitle: "k. magazine",
     subtitle: "Magazine Layout",
+    slug: "k-magazine",
     thumbnailImage: imgH4,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[701/772]",
@@ -126,6 +130,7 @@ const PROJECTS: Project[] = [
     title: "A lone wanderer",
     englishTitle: "A lone wanderer",
     subtitle: "Short Documentary Film",
+    slug: "a-lone-wanderer",
     thumbnailImage: imgH3,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[698/716]",
@@ -151,6 +156,7 @@ const PROJECTS: Project[] = [
     number: "05",
     title: "Booklet of Memory",
     englishTitle: "Booklet of Memory",
+    slug: "booklet-of-memory",
     subtitle: "Side Research Project, Book Layout",
     thumbnailImage: imgBooklet,
     thumbnailFit: "cover",
@@ -174,6 +180,7 @@ const PROJECTS: Project[] = [
     number: "06",
     title: "No one like me",
     englishTitle: "No one like me",
+    slug: "no-one-like-me",
     subtitle: "Music video",
     thumbnailImage: imgNoOne,
     thumbnailFit: "cover",
@@ -810,18 +817,54 @@ function AboutPage({ onClose }: { onClose: () => void }) {
 }
 // ─── App ──────────────────────────────────────────────────────────────────────
 
+const getProjectFromPath = (): Project | null => {
+  const match = window.location.pathname.match(/^\/projects\/([^/]+)$/);
+
+  if (!match) return null;
+
+  return PROJECTS.find((project) => project.slug === match[1]) ?? null;
+};
+
 export default function App() {
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(
+    getProjectFromPath()
+  );
   const [showAbout, setShowAbout] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = "hr";
   }, []);
 
-  const handleSelect = (p: Project) => { setActiveProject(p); };
-  const handleClose = () => { setActiveProject(null); };
-  const handleAbout = () => { setShowAbout(true); };
-  const handleAboutClose = () => { setShowAbout(false); };
+  useEffect(() => {
+    const handlePopState = () => {
+      setActiveProject(getProjectFromPath());
+      setShowAbout(false);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
+  const handleSelect = (p: Project) => {
+    window.history.pushState({}, "", `/projects/${p.slug}`);
+    setActiveProject(p);
+  };
+
+  const handleClose = () => {
+    window.history.pushState({}, "", "/");
+    setActiveProject(null);
+  };
+
+  const handleAbout = () => {
+    setShowAbout(true);
+  };
+
+  const handleAboutClose = () => {
+    setShowAbout(false);
+  };
 
   const pageKey = activeProject
     ? `project-${activeProject.id}`
@@ -841,7 +884,7 @@ export default function App() {
         key={pageKey}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        exit={{ opacity: 1 }}
         transition={{ duration: 0.22, ease: "easeOut" }}
         data-scroll-container=""
         style={{
