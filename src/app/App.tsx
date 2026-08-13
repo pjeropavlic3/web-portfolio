@@ -119,8 +119,8 @@ const PROJECTS: Project[] = [
     thumbnailImage: imgH4,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[701/772]",
-    detailImages: [{ type: "image", src: imgH4, aspect: "aspect-[701/772]", caption: "Cover and spread design from k. magazine — editorial layout and typography." }
-      { type: "image", src: imgkmagazine01, aspect: "aspect-[701/772]", caption: "Spread design from a chapter of k. magazine." }
+    detailImages: [{ type: "image", src: imgH4, aspect: "aspect-[701/772]", caption: "Cover and spread design from k. magazine — editorial layout and typography." },
+      { type: "image", src: imgkmagazine01, aspect: "aspect-[701/772]", caption: "Spread design from a chapter of k. magazine." },
       { type: "image", src: imgkmagazine02, aspect: "aspect-[701/772]", caption: "Spread design from a chapter of k. magazine." }
     ],
     description: ["Queer, Culture, and Representation is the 16th issue of the magazine k., for which I handled the publication's layout. The project involved organizing the content and designing the magazine's visual structure. The publication was launched at [[Booksa|https://www.booksa.hr]], where the magazine was presented to the public through a discussion and a promotional event."],
