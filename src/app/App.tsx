@@ -626,7 +626,7 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
         {/* Right — images/video with pr-[14px] so right edge matches (close) button */}
         <div className="order-1 md:order-2 md:w-[49.5%] flex flex-col gap-[12px] pr-[14px]">
           {project.detailImages.map((item, i) => (
-            <div
+            <motion.div
               key={i}
               className={`w-[82%] ml-auto ${item.aspect} relative overflow-hidden cursor-pointer group`}
               onClick={() => setLightboxIndex(i)}
@@ -651,7 +651,7 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
   loading={i === 0 ? "eager" : "lazy"}
 />
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </main>
