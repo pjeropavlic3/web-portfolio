@@ -18,6 +18,8 @@ import imgKinoA from "@/imports/kinoa_plakat_mockup2.webp";
 import imgKinoB from "@/imports/image.webp";
 import imgKinoC from "@/imports/image-1.webp";
 import imgKinoD from "@/imports/image-2.webp";
+import imgkmagazine01 from "@/imports/kmagazine01.webp";
+import imgkmagazine02 from "@/imports/kmagazine02.webp";
 import imgNoOne from "@/imports/vlcsnap-2026-08-12-11h52m03s408.webp";
 import imgLoneA from "@/imports/image-3.webp";
 import imgLoneB from "@/imports/image-4.webp";
@@ -117,7 +119,10 @@ const PROJECTS: Project[] = [
     thumbnailImage: imgH4,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[701/772]",
-    detailImages: [{ type: "image", src: imgH4, aspect: "aspect-[701/772]", caption: "Cover and spread design from k. magazine — editorial layout and typography." }],
+    detailImages: [{ type: "image", src: imgH4, aspect: "aspect-[701/772]", caption: "Cover and spread design from k. magazine — editorial layout and typography." }
+      { type: "image", src: imgkmagazine01, aspect: "aspect-[701/772]", caption: "Spread design from a chapter of k. magazine." }
+      { type: "image", src: imgkmagazine02, aspect: "aspect-[701/772]", caption: "Spread design from a chapter of k. magazine." }
+    ],
     description: ["Queer, Culture, and Representation is the 16th issue of the magazine k., for which I handled the publication's layout. The project involved organizing the content and designing the magazine's visual structure. The publication was launched at [[Booksa|https://www.booksa.hr]], where the magazine was presented to the public through a discussion and a promotional event."],
     credits: [
       { label: "Student", value: "univ. mag. art. Petra Pavlić" },
