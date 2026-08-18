@@ -432,7 +432,19 @@ function ProjectBlock({ project, onSelect }: { project: Project; onSelect: (p: P
   );
 }
 
-function HomeNav({ menuOpen, setMenuOpen, onAbout }: { menuOpen: boolean; setMenuOpen: (v: boolean) => void; onAbout: () => void }) {
+function HomeNav({
+  menuOpen,
+  setMenuOpen,
+  onAbout,
+  activeCategory,
+  setActiveCategory,
+}: {
+  menuOpen: boolean;
+  setMenuOpen: (v: boolean) => void;
+  onAbout: () => void;
+  activeCategory: "all" | "video" | "design";
+  setActiveCategory: (v: "all" | "video" | "design") => void;
+}) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
       <div className="flex items-center justify-between w-full">
@@ -466,7 +478,7 @@ function HomePage({
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<"all" | "video" | "design">("all");
+  const [activeCategory, setActiveCategory] = useState<"video" | "design">("design");
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText("petra.pavlic3@gmail.com");
@@ -507,6 +519,8 @@ function HomePage({
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         onAbout={onAbout}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
       />
 
       <main id="work" className="pt-[50px]">
