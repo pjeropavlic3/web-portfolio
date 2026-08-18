@@ -483,7 +483,7 @@ function HomeNav({
   </nav>
 
   {/* Right */}
-  <nav className="hidden md:flex items-center gap-10 ml-auto">
+  <nav className="hidden md:flex items-center gap-10 ml-auto pr-[14px]">
     <button
       onClick={onAbout}
       className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
