@@ -634,25 +634,6 @@ function HomePage({
   
   <main id="work" className="pt-[50px]">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] px-[14px] md:px-[15px]">
-
-  <button
-    onClick={() => setActiveCategory("video")}
-    className="text-[14px] text-black cursor-pointer"
-    style={FONT}
-  >
-    video
-  </button>
-
-  <button
-    onClick={() => setActiveCategory("design")}
-    className="text-[14px] text-black cursor-pointer"
-    style={FONT}
-  >
-    design
-  </button>
-</div>
-
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] px-[14px] md:px-[15px]">
           <div className="flex flex-col">
             {left.map((p) => (
               <ProjectBlock
