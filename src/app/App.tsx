@@ -39,6 +39,8 @@ interface DetailItem {
   caption?: string;
 }
 
+type ProjectCategory = "video" | "design";
+
 interface Project {
   id: string;
   number: string;
@@ -64,6 +66,7 @@ const PROJECTS: Project[] = [
     englishTitle: "Things left behind",
     slug: "things-left-behind",
     subtitle: "Master's Thesis",
+    category: "design",
     thumbnailImage: imgH1,
     thumbnailFit: "contain",
     thumbnailAspect: "aspect-[701/467]",
@@ -94,6 +97,7 @@ const PROJECTS: Project[] = [
     englishTitle: "Kino A214",
     subtitle: "Student Collective Project",
     slug: "kino-a214",
+    category: "design",
     thumbnailImage: imgKinoA,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[698/873]",
@@ -116,6 +120,7 @@ const PROJECTS: Project[] = [
     englishTitle: "k. magazine",
     subtitle: "Magazine Layout",
     slug: "k-magazine",
+    category: "design",
     thumbnailImage: imgH4,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[701/772]",
@@ -136,6 +141,7 @@ const PROJECTS: Project[] = [
     englishTitle: "A lone wanderer",
     subtitle: "Short Documentary Film",
     slug: "a-lone-wanderer",
+    category: "video",
     thumbnailImage: imgH3,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[698/716]",
@@ -162,6 +168,7 @@ const PROJECTS: Project[] = [
     title: "Booklet of Memory",
     englishTitle: "Booklet of Memory",
     slug: "booklet-of-memory",
+    category: "design",
     subtitle: "Side Research Project, Book Layout",
     thumbnailImage: imgBooklet,
     thumbnailFit: "cover",
@@ -187,6 +194,7 @@ const PROJECTS: Project[] = [
     englishTitle: "No one like me",
     slug: "no-one-like-me",
     subtitle: "Music video",
+    category: "video",
     thumbnailImage: imgNoOne,
     thumbnailFit: "cover",
     thumbnailAspect: "aspect-[4/3]",
