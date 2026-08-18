@@ -446,58 +446,62 @@ function HomeNav({
   setActiveCategory: (v: "video" | "design") => void;
 }) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] grid grid-cols-3 items-center px-[14px]">
-      
-      {/* Left */}
-      <div className="flex items-center">
-        <span className="text-[14px] text-black" style={FONT}>
-          Petra Pavlić — Portfolio
-        </span>
-      </div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
 
-      {/* Center — category navigation */}
-      <nav className="hidden md:flex items-center justify-center gap-6">
-        <button
-          onClick={() => setActiveCategory("video")}
-          className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-            activeCategory === "video" ? "text-black" : "text-black/40 hover:text-black"
-          }`}
-          style={FONT}
-        >
-          video
-        </button>
+  {/* Left */}
+  <div className="flex items-center">
+    <span className="text-[14px] text-black" style={FONT}>
+      Petra Pavlić — Portfolio
+    </span>
+  </div>
 
-        <button
-          onClick={() => setActiveCategory("design")}
-          className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-            activeCategory === "design" ? "text-black" : "text-black/40 hover:text-black"
-          }`}
-          style={FONT}
-        >
-          design
-        </button>
-      </nav>
+  {/* Center — category navigation */}
+  <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
+    <button
+      onClick={() => setActiveCategory("video")}
+      className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+        activeCategory === "video"
+          ? "text-black"
+          : "text-black/40 hover:text-black"
+      }`}
+      style={FONT}
+    >
+      video
+    </button>
 
-      {/* Right */}
-      <nav className="hidden md:flex items-center justify-end gap-10">
-        <button
-          onClick={onAbout}
-          className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
-          style={FONT}
-        >
-          about
-        </button>
+    <button
+      onClick={() => setActiveCategory("design")}
+      className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+        activeCategory === "design"
+          ? "text-black"
+          : "text-black/40 hover:text-black"
+      }`}
+      style={FONT}
+    >
+      design
+    </button>
+  </nav>
 
-        <a
-          href="https://www.instagram.com/pavlic.petra/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
-          style={FONT}
-        >
-          instagram
-        </a>
-      </nav>
+  {/* Right */}
+  <nav className="hidden md:flex items-center gap-10 ml-auto">
+    <button
+      onClick={onAbout}
+      className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
+      style={FONT}
+    >
+      about
+    </button>
+
+    <a
+      href="https://www.instagram.com/pavlic.petra/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+      style={FONT}
+    >
+      instagram
+    </a>
+  </nav>
 
       {/* Mobile menu button */}
       <button
@@ -627,15 +631,9 @@ function HomePage({
         setActiveCategory={setActiveCategory}
       />
 
-      <main id="work" className="pt-[50px]">
-  <div className="flex items-center gap-6 px-[14px] md:px-[15px] pb-5">
-  <button
-    onClick={() => setActiveCategory("all")}
-    className="text-[14px] text-black cursor-pointer"
-    style={FONT}
-  >
-    all
-  </button>
+  
+  <main id="work" className="pt-[50px]">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] px-[14px] md:px-[15px]">
 
   <button
     onClick={() => setActiveCategory("video")}
