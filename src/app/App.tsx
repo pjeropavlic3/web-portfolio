@@ -442,28 +442,137 @@ function HomeNav({
   menuOpen: boolean;
   setMenuOpen: (v: boolean) => void;
   onAbout: () => void;
-  activeCategory: "all" | "video" | "design";
-  setActiveCategory: (v: "all" | "video" | "design") => void;
+  activeCategory: "video" | "design";
+  setActiveCategory: (v: "video" | "design") => void;
 }) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
-      <div className="flex items-center justify-between w-full">
-        <span className="text-[14px] text-black" style={FONT}>Petra Pavlić — Portfolio</span>
-        <nav className="hidden md:flex items-center gap-10">
-          <button onClick={onAbout} className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0" style={FONT}>about</button>
-          <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity" style={{ ...FONT, marginRight: "14px" }}>instagram</a>
-        </nav>
-
-        <button className="md:hidden flex flex-col gap-[5px] p-1" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-          <span className={`block w-5 h-px bg-black transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
-          <span className={`block w-5 h-px bg-black transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-px bg-black transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
-        </button>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] grid grid-cols-3 items-center px-[14px]">
+      
+      {/* Left */}
+      <div className="flex items-center">
+        <span className="text-[14px] text-black" style={FONT}>
+          Petra Pavlić — Portfolio
+        </span>
       </div>
 
-      <div className={`md:hidden absolute top-[50px] left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-[rgba(0,0,0,0.06)] flex flex-col px-[14px] py-4 gap-4 transition-all duration-200 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-        <button onClick={() => { onAbout(); setMenuOpen(false); }} className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0" style={FONT}>about me</button>
-        <a href="https://www.instagram.com/pavlic.petra/" target="_blank" rel="noopener noreferrer" className="text-[14px] text-black no-underline" style={FONT} onClick={() => setMenuOpen(false)}>instagram</a>
+      {/* Center — category navigation */}
+      <nav className="hidden md:flex items-center justify-center gap-6">
+        <button
+          onClick={() => setActiveCategory("video")}
+          className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+            activeCategory === "video" ? "text-black" : "text-black/40 hover:text-black"
+          }`}
+          style={FONT}
+        >
+          video
+        </button>
+
+        <button
+          onClick={() => setActiveCategory("design")}
+          className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+            activeCategory === "design" ? "text-black" : "text-black/40 hover:text-black"
+          }`}
+          style={FONT}
+        >
+          design
+        </button>
+      </nav>
+
+      {/* Right */}
+      <nav className="hidden md:flex items-center justify-end gap-10">
+        <button
+          onClick={onAbout}
+          className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
+          style={FONT}
+        >
+          about
+        </button>
+
+        <a
+          href="https://www.instagram.com/pavlic.petra/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+          style={FONT}
+        >
+          instagram
+        </a>
+      </nav>
+
+      {/* Mobile menu button */}
+      <button
+        className="md:hidden flex flex-col gap-[5px] p-1 ml-auto"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span
+          className={`block w-5 h-px bg-black transition-all duration-200 ${
+            menuOpen ? "rotate-45 translate-y-[6px]" : ""
+          }`}
+        />
+        <span
+          className={`block w-5 h-px bg-black transition-all duration-200 ${
+            menuOpen ? "opacity-0" : ""
+          }`}
+        />
+        <span
+          className={`block w-5 h-px bg-black transition-all duration-200 ${
+            menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+          }`}
+        />
+      </button>
+
+      {/* Mobile dropdown */}
+      <div
+        className={`md:hidden absolute top-[50px] left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-[rgba(0,0,0,0.06)] flex flex-col px-[14px] py-4 gap-4 transition-all duration-200 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <button
+          onClick={() => {
+            setActiveCategory("video");
+            setMenuOpen(false);
+          }}
+          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
+          style={FONT}
+        >
+          video
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveCategory("design");
+            setMenuOpen(false);
+          }}
+          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
+          style={FONT}
+        >
+          design
+        </button>
+
+        <button
+          onClick={() => {
+            onAbout();
+            setMenuOpen(false);
+          }}
+          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
+          style={FONT}
+        >
+          about me
+        </button>
+
+        <a
+          href="https://www.instagram.com/pavlic.petra/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[14px] text-black no-underline"
+          style={FONT}
+          onClick={() => setMenuOpen(false)}
+        >
+          instagram
+        </a>
       </div>
     </header>
   );
@@ -499,16 +608,11 @@ function HomePage({
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  const sortedProjects =
-  activeCategory === "all"
-    ? PROJECTS
-    : PROJECTS
-        .filter((project) => project.category === activeCategory)
-        .sort(
-          (a, b) =>
-            CATEGORY_ORDER[activeCategory].indexOf(a.id) -
-            CATEGORY_ORDER[activeCategory].indexOf(b.id)
-        );
+  const sortedProjects = [...PROJECTS].sort(
+  (a, b) =>
+    CATEGORY_ORDER[activeCategory].indexOf(a.id) -
+    CATEGORY_ORDER[activeCategory].indexOf(b.id)
+);
 
    const left = sortedProjects.filter((_, index) => index % 2 === 0);
    const right = sortedProjects.filter((_, index) => index % 2 === 1);
