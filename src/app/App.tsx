@@ -461,8 +461,8 @@ function HomeNav({
       onClick={() => setActiveCategory("video")}
       className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
         activeCategory === "video"
-          ? "text-black"
-          : "text-black/40 hover:text-black"
+          ? "text-black underline underline-offset-2"
+    : "text-black/40 hover:text-black hover:underline"
       }`}
       style={FONT}
     >
@@ -473,8 +473,8 @@ function HomeNav({
       onClick={() => setActiveCategory("design")}
       className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
         activeCategory === "design"
-          ? "text-black"
-          : "text-black/40 hover:text-black"
+          ? "text-black underline underline-offset-2"
+          : "text-black/40 hover:text-black hover:underline"
       }`}
       style={FONT}
     >
@@ -536,6 +536,17 @@ function HomeNav({
       >
         <button
           onClick={() => {
+            setActiveCategory("design");
+            setMenuOpen(false);
+          }}
+          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
+          style={FONT}
+        >
+          design
+        </button>
+
+        <button
+          onClick={() => {
             setActiveCategory("video");
             setMenuOpen(false);
           }}
@@ -545,16 +556,7 @@ function HomeNav({
           video
         </button>
 
-        <button
-          onClick={() => {
-            setActiveCategory("design");
-            setMenuOpen(false);
-          }}
-          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
-          style={FONT}
-        >
-          design
-        </button>
+      
 
         <button
           onClick={() => {
