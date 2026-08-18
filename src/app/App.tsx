@@ -449,56 +449,62 @@ function HomeNav({
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
 
   {/* Left */}
-  <div className="flex items-center gap-6">
-    <span className="text-[14px] text-black" style={FONT}>
-      Petra Pavlić — Portfolio
-    </span>
+  {/* Left */}
+<div className="flex items-center">
+  <span className="text-[14px] text-black" style={FONT}>
+    Petra Pavlić — Portfolio
+  </span>
+</div>
 
-    <button
-      onClick={() => setActiveCategory("design")}
-      className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-        activeCategory === "design"
-          ? "text-black underline underline-offset-2"
-          : "text-black/40 hover:text-black hover:underline"
-      }`}
-      style={FONT}
-    >
-      design
-    </button>
-  </div>
+{/* Center — category navigation */}
+<nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
 
-  {/* Right */}
-  <nav className="hidden md:flex items-center gap-10 ml-auto">
-    <button
-      onClick={() => setActiveCategory("video")}
-      className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-        activeCategory === "video"
-          ? "text-black underline underline-offset-2"
-          : "text-black/40 hover:text-black hover:underline"
-      }`}
-      style={FONT}
-    >
-      video
-    </button>
+  <button
+    onClick={() => setActiveCategory("design")}
+    className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+      activeCategory === "design"
+        ? "text-black underline underline-offset-2"
+        : "text-black/40 hover:text-black hover:underline"
+    }`}
+    style={FONT}
+  >
+    design
+  </button>
 
-    <button
-      onClick={onAbout}
-      className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
-      style={FONT}
-    >
-      about
-    </button>
+  <button
+    onClick={() => setActiveCategory("video")}
+    className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+      activeCategory === "video"
+        ? "text-black underline underline-offset-2"
+        : "text-black/40 hover:text-black hover:underline"
+    }`}
+    style={FONT}
+  >
+    video
+  </button>
 
-    <a
-      href="https://www.instagram.com/pavlic.petra/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
-      style={FONT}
-    >
-      instagram
-    </a>
-  </nav>
+</nav>
+
+{/* Right */}
+<nav className="hidden md:flex items-center gap-10 ml-auto pr-[14px]">
+  <button
+    onClick={onAbout}
+    className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
+    style={FONT}
+  >
+    about
+  </button>
+
+  <a
+    href="https://www.instagram.com/pavlic.petra/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+    style={FONT}
+  >
+    instagram
+  </a>
+</nav>
 
       {/* Mobile menu button */}
       <button
