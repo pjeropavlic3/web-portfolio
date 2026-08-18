@@ -48,6 +48,7 @@ interface Project {
   englishTitle: string;
   slug: string;
   subtitle: string;
+  category: ProjectCategory;
   thumbnailImage: string;
   thumbnailFit: "contain" | "cover";
   thumbnailAspect: string;
@@ -216,6 +217,11 @@ const PROJECTS: Project[] = [
 
 const LEFT_PROJECT_IDS = ["01", "03", "05"];
 const RIGHT_PROJECT_IDS = ["02", "04", "06"];
+
+const CATEGORY_ORDER: Record<"video" | "design", string[]> = {
+  video: ["04", "06", "02", "01", "03", "05"],
+  design: ["01", "03", "02", "05", "04", "06"],
+};
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -460,6 +466,7 @@ function HomePage({
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<"all" | "video" | "design">("all");
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText("petra.pavlic3@gmail.com");
@@ -480,8 +487,19 @@ function HomePage({
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  const left = PROJECTS.filter((p) => LEFT_PROJECT_IDS.includes(p.id));
-  const right = PROJECTS.filter((p) => RIGHT_PROJECT_IDS.includes(p.id));
+  const sortedProjects =
+  activeCategory === "all"
+    ? PROJECTS
+    : PROJECTS
+        .filter((project) => project.category === activeCategory)
+        .sort(
+          (a, b) =>
+            CATEGORY_ORDER[activeCategory].indexOf(a.id) -
+            CATEGORY_ORDER[activeCategory].indexOf(b.id)
+        );
+
+   const left = sortedProjects.filter((_, index) => index % 2 === 0);
+   const right = sortedProjects.filter((_, index) => index % 2 === 1);
 
   return (
     <div className="bg-white min-h-screen" style={FONT}>
@@ -492,7 +510,33 @@ function HomePage({
       />
 
       <main id="work" className="pt-[50px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] px-[14px] md:px-[15px]">
+  <div className="flex items-center gap-6 px-[14px] md:px-[15px] pb-5">
+  <button
+    onClick={() => setActiveCategory("all")}
+    className="text-[14px] text-black cursor-pointer"
+    style={FONT}
+  >
+    all
+  </button>
+
+  <button
+    onClick={() => setActiveCategory("video")}
+    className="text-[14px] text-black cursor-pointer"
+    style={FONT}
+  >
+    video
+  </button>
+
+  <button
+    onClick={() => setActiveCategory("design")}
+    className="text-[14px] text-black cursor-pointer"
+    style={FONT}
+  >
+    design
+  </button>
+</div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] px-[14px] md:px-[15px]">
           <div className="flex flex-col">
             {left.map((p) => (
               <ProjectBlock
