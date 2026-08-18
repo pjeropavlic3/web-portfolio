@@ -220,7 +220,7 @@ const RIGHT_PROJECT_IDS = ["02", "04", "06"];
 
 const CATEGORY_ORDER: Record<"video" | "design", string[]> = {
   video: ["04", "06", "02", "01", "03", "05"],
-  design: ["01", "03", "02", "05", "04", "06"],
+  design: ["01", "02", "03", "05", "04", "06"],
 };
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -449,25 +449,10 @@ function HomeNav({
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
 
   {/* Left */}
-  <div className="flex items-center">
+  <div className="flex items-center gap-6">
     <span className="text-[14px] text-black" style={FONT}>
       Petra Pavlić — Portfolio
     </span>
-  </div>
-
-  {/* Center — category navigation */}
-  <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
-    <button
-      onClick={() => setActiveCategory("video")}
-      className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-        activeCategory === "video"
-          ? "text-black underline underline-offset-2"
-    : "text-black/40 hover:text-black hover:underline"
-      }`}
-      style={FONT}
-    >
-      video
-    </button>
 
     <button
       onClick={() => setActiveCategory("design")}
@@ -480,10 +465,22 @@ function HomeNav({
     >
       design
     </button>
-  </nav>
+  </div>
 
   {/* Right */}
-  <nav className="hidden md:flex items-center gap-10 ml-auto pr-[14px]">
+  <nav className="hidden md:flex items-center gap-10 ml-auto">
+    <button
+      onClick={() => setActiveCategory("video")}
+      className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
+        activeCategory === "video"
+          ? "text-black underline underline-offset-2"
+          : "text-black/40 hover:text-black hover:underline"
+      }`}
+      style={FONT}
+    >
+      video
+    </button>
+
     <button
       onClick={onAbout}
       className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
