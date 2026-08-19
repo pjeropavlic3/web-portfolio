@@ -410,24 +410,42 @@ function ProjectBlock({ project, onSelect }: { project: Project; onSelect: (p: P
   const ref = useFadeIn();
   return (
     <div ref={ref} style={FADE_INITIAL} className="flex flex-col gap-0">
-      <button
-        className={`w-full ${project.thumbnailAspect} relative overflow-hidden bg-[#f2f2f0] cursor-pointer group`}
-        onClick={() => onSelect(project)}
-        aria-label={`Open project: ${project.title}`}
-      >
-        <img
-          src={project.thumbnailImage}
-          alt={`${project.title} — ${project.subtitle}`}
-          className={`absolute inset-0 size-full transition-transform duration-500 ease-out group-hover:scale-[1.02] ${
-            project.thumbnailFit === "cover" ? "object-cover" : "object-contain"
-          }`}
-        />
-      </button>
-      <div className="flex items-baseline gap-3 pt-[7px] pb-[18px] cursor-pointer" onClick={() => onSelect(project)}>
-        <span className="text-[11px] text-black tabular-nums shrink-0" style={FONT}>{project.number}</span>
-        <span className="text-[11px] text-black" style={FONT}>{project.title}</span>
-        <span className="text-[11px] text-[#aeaeae] ml-4 shrink-0" style={FONT}>{project.subtitle}</span>
-      </div>
+      <a
+  href={`/projects/${project.slug}`}
+  className={`block w-full ${project.thumbnailAspect} relative overflow-hidden bg-[#f2f2f0] cursor-pointer group`}
+  onClick={(e) => {
+    e.preventDefault();
+    onSelect(project);
+  }}
+  aria-label={`Open project: ${project.title}`}
+>
+  </a>
+      <a
+  href={`/projects/${project.slug}`}
+  onClick={(e) => {
+    e.preventDefault();
+    onSelect(project);
+  }}
+  className="flex items-baseline gap-3 pt-[7px] pb-[18px] cursor-pointer no-underline"
+>
+  <span
+    className="text-[11px] text-black tabular-nums shrink-0"
+    style={FONT}
+  >
+    {project.number}
+  </span>
+
+  <span className="text-[11px] text-black" style={FONT}>
+    {project.title}
+  </span>
+
+  <span
+    className="text-[11px] text-[#aeaeae] ml-4 shrink-0"
+    style={FONT}
+  >
+    {project.subtitle}
+  </span>
+</a>
     </div>
   );
 }
@@ -487,13 +505,17 @@ function HomeNav({
 
 {/* Right */}
 <nav className="hidden md:flex items-center gap-10 ml-auto pr-[14px]">
-  <button
-    onClick={onAbout}
-    className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
-    style={FONT}
-  >
-    about
-  </button>
+  <a
+  href="/about"
+  onClick={(e) => {
+    e.preventDefault();
+    onAbout();
+  }}
+  className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+  style={FONT}
+>
+  about
+</a>
 
   <a
     href="https://www.instagram.com/pavlic.petra/"
@@ -537,16 +559,18 @@ function HomeNav({
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <button
-          onClick={() => {
-            setActiveCategory("design");
-            setMenuOpen(false);
-          }}
-          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
-          style={FONT}
-        >
-          design
-        </button>
+        <a
+  href="/about"
+  onClick={(e) => {
+    e.preventDefault();
+    onAbout();
+    setMenuOpen(false);
+  }}
+  className="text-[14px] text-black text-left no-underline"
+  style={FONT}
+>
+  about me
+</a>
 
         <button
           onClick={() => {
@@ -984,21 +1008,25 @@ const getProjectFromPath = (): Project | null => {
   return PROJECTS.find((project) => project.slug === match[1]) ?? null;
 };
 
+const isAboutPath = (): boolean => {
+  return window.location.pathname === "/about";
+};
+
 export default function App() {
   const [activeProject, setActiveProject] = useState<Project | null>(
     getProjectFromPath()
   );
-  const [showAbout, setShowAbout] = useState(false);
+  const [showAbout, setShowAbout] = useState(isAboutPath());
 
   useEffect(() => {
-    document.documentElement.lang = "hr";
+    document.documentElement.lang = "en";
   }, []);
 
   useEffect(() => {
     const handlePopState = () => {
-      setActiveProject(getProjectFromPath());
-      setShowAbout(false);
-    };
+  setActiveProject(getProjectFromPath());
+  setShowAbout(isAboutPath());
+};
 
     window.addEventListener("popstate", handlePopState);
 
@@ -1018,18 +1046,30 @@ export default function App() {
   };
 
   const handleAbout = () => {
-    setShowAbout(true);
-  };
+  window.history.pushState({}, "", "/about");
+  setShowAbout(true);
+};
 
   const handleAboutClose = () => {
-    setShowAbout(false);
-  };
+  window.history.pushState({}, "", "/");
+  setShowAbout(false);
+};
 
   const pageKey = activeProject
     ? `project-${activeProject.id}`
     : showAbout
     ? "about"
     : "home";
+
+    useEffect(() => {
+  if (activeProject) {
+    document.title = `${activeProject.englishTitle} — Petra Pavlić`;
+  } else if (showAbout) {
+    document.title = "About — Petra Pavlić";
+  } else {
+    document.title = "Petra Pavlić — Visual Communication Designer";
+  }
+}, [activeProject, showAbout]);
 
   const pageContent = activeProject
     ? <ProjectPage project={activeProject} onClose={handleClose} />
