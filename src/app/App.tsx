@@ -424,10 +424,9 @@ function ProjectBlock({ project, onSelect }: { project: Project; onSelect: (p: P
         />
       </button>
       <div className="flex items-baseline gap-3 pt-[7px] pb-[18px] cursor-pointer" onClick={() => onSelect(project)}>
-        <span className="text-[11px] text-black tabular-nums shrink-0" style={FONT}>{project.number}</span>
-        <span className="text-[11px] text-black" style={FONT}>{project.title}</span>
-        <span className="text-[11px] text-[#aeaeae] ml-4 shrink-0" style={FONT}>{project.subtitle}</span>
-      </div>
+       <span className="text-[11px] text-black" style={FONT}>{project.title}</span>
+       <span className="text-[11px] text-[#aeaeae] ml-4 shrink-0" style={FONT}>{project.subtitle}</span>
+       </div>
     </div>
   );
 }
