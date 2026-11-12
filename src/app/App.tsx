@@ -9,6 +9,13 @@ import imgH3 from "@/imports/Homepage/66567dcdda9c9ec368fc2a3c46460dbb3531d190.w
 import imgH4 from "@/imports/Homepage/8b435e23e9d320d6b65f162147c4750cd5c79632.webp";
 
 // Project 01 detail images
+// Paromlin — Visual Identity
+import imgParomlin01 from "@/imports/Paromlin/paromlin logo.webp";
+import imgParomlin02 from "@/imports/Paromlin/paromlin variable.webp";
+import imgParomlin03 from "@/imports/Paromlin/paromlin logo skraceni.webp";
+import imgParomlin04 from "@/imports/Paromlin/signalizacija.webp";
+import imgParomlin05 from "@/imports/Paromlin/plakati.webp";
+import imgParomlin06 from "@/imports/Paromlin/šal.webp";
 import imgP1a from "@/imports/ProjectInfo-1/9f388cccfa674d33df6f61bfeb4a12b845acb47c.webp";
 import imgP1b from "@/imports/ProjectInfo-1/1d102274b3a2914eb0577f013e3e1b77ef41ac3e.webp";
 import imgP1c from "@/imports/ProjectInfo-1/f8bbab8c44cd193c50b070de74db6ccdbb8807c0.webp";
@@ -18,6 +25,9 @@ import imgKinoA from "@/imports/kinoa_plakat_mockup2.webp";
 import imgKinoB from "@/imports/image.webp";
 import imgKinoC from "@/imports/image-1.webp";
 import imgKinoD from "@/imports/image-2.webp";
+import imgKinoE from "@/imports/DObro jutro 1.webp";
+import imgKinoF from "@/imports/Instagram post - 92.webp";
+import imgKinoG from "@/imports/Instagram post - 104.webp";
 import imgkmagazine01 from "@/imports/kmagazine01.webp";
 import imgkmagazine02 from "@/imports/kmagazine02.webp";
 import imgNoOne from "@/imports/vlcsnap-2026-08-12-11h52m03s408.webp";
@@ -60,13 +70,79 @@ interface Project {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const PROJECTS: Project[] = [
+    {
+    id: "07",
+    number: "07",
+    title: "Paromlin — Meeting Point",
+    englishTitle: "Visual Identity Proposal for Paromlin",
+    slug: "paromlin",
+    subtitle: "Visual Identity",
+    category: "design",
+
+    thumbnailImage: imgParomlin01,
+    thumbnailFit: "cover",
+    thumbnailAspect: "aspect-[701/467]",
+
+    detailImages: [
+      {
+        type: "image",
+        src: imgParomlin01,
+        aspect: "aspect-[4/3]",
+        caption: "Visual identity proposal for Paromlin."
+      },
+      {
+        type: "image",
+        src: imgParomlin02,
+        aspect: "aspect-[4/3]",
+        caption: "Logo and visual identity system."
+      },
+      {
+        type: "image",
+        src: imgParomlin03,
+        aspect: "aspect-[4/3]",
+        caption: "Typography and graphic elements."
+      },
+      {
+        type: "image",
+        src: imgParomlin04,
+        aspect: "aspect-[4/3]",
+        caption: "Stationery design."
+      },
+      {
+        type: "image",
+        src: imgParomlin05,
+        aspect: "aspect-[4/3]",
+        caption: "Wayfinding and spatial signage."
+      },
+      {
+        type: "image",
+        src: imgParomlin06,
+        aspect: "aspect-[4/3]",
+        caption: "Promotional materials."
+      },
+    ],
+
+    description: [
+    "A point marks the end of one chapter, while simultaneously opening space for the beginning of a new one. As the smallest unit of form, it carries within itself the potential for the development of more complex structures. In a similar way, a cultural center and library foster personal and social development through the exchange of knowledge, ideas, and experiences.",
+
+    "The potential of a point to evolve into lines, planes, and compositions is mirrored in the transformation of the historic Paromlin site. Through a shift in function, this former industrial space becomes a new meeting place—a new point on the cultural and social map of Zagreb.",
+
+    "A point of interest, open to diverse generations, with an openness toward a wide spectrum of ideas, skills, and disciplines."
+    ],
+
+    credits: [
+      { label: "Project", value: "Visual identity proposal for Paromlin" },
+      { label: "Designers", value: "Petra Pavlić, Victoria Bucul" },
+      { label: "Year", value: "2026." }
+    ],
+  },
   {
     id: "01",
     number: "01",
     title: "Things left behind",
     englishTitle: "Things left behind",
     slug: "things-left-behind",
-    subtitle: "Master's Thesis",
+    subtitle: "Layout, Publication, Packaging",
     category: "design",
     thumbnailImage: imgH1,
     thumbnailFit: "contain",
@@ -82,7 +158,7 @@ const PROJECTS: Project[] = [
       "The project explores the relationship between grief, memory, and the material traces a person leaves behind after death. The starting point of the project is the personal experience of clearing out an apartment after the death of the author's grandfather, during which everyday objects became triggers for memories of specific episodes from his life.",
       "      Through an autoethnographic approach, the project documents the process of confronting an inheritance through photographing the space, selecting objects, and writing down memories associated with them. A large number of inherited belongings is gradually reduced to five selected objects presented in the form of smaller boxes, symbolizing the process of packing and clearing the apartment.",
       "      The final work consists of an archival box containing a publication and five smaller boxes. The publication guides the viewer through the process behind the creation of the project, while the smaller boxes contain objects and textual fragments of memories connected to them. The outer surfaces of the boxes feature graphics of the objects, while the interiors contain photographs of the spaces from which the objects originated, creating a connection between object, space, and memory.",
-      "      At the same time, the project questions how we confront inheritance and the process of separation after death, and whether it is possible to develop a more conscious and empathetic relationship toward the generations that come after us.",
+      "      At the same time, the project questions how we confront inheritance and the process of separation after death, and whether it is possible to develop a more conscious and empathetic relationship toward the generations that come after us. The project was exhibited at the [[HDD, Croatian Designers Association|https://dizajn.hr/blog/izlozba-hrvatskog-dizajna-2526-rezultati/]].",
     ],
     credits: [
       { label: "Student", value: "univ. mag. art. Petra Pavlić" },
@@ -96,7 +172,7 @@ const PROJECTS: Project[] = [
     number: "02",
     title: "Kino A214",
     englishTitle: "Kino A214",
-    subtitle: "Student Collective Project",
+    subtitle: "Visual Identity, Event Design & Organization",
     slug: "kino-a214",
     category: "design",
     thumbnailImage: imgKinoA,
@@ -107,6 +183,9 @@ const PROJECTS: Project[] = [
       { type: "image", src: imgKinoB, aspect: "aspect-[4/3]", caption: "Post-screening discussion with the filmmaker and student moderators." },
       { type: "image", src: imgKinoC, aspect: "aspect-[4/3]", caption: "Tibor Đurđev (Žive slike, 2025.) in conversation with the audience during a Q&A session." },
       { type: "image", src: imgKinoD, aspect: "aspect-[4/3]", caption: "Screening event with Mara Prpić (Žal, 2024.) students and guests gathered for the programme." },
+      { type: "image", src: imgKinoE, aspect: "aspect-[4/3]", caption: "Screening poster of the short film 'Dobro jutro Hrvatska'." },
+      { type: "image", src: imgKinoF, aspect: "aspect-[4/3]", caption: "Instagram post promoting the screening event." },
+      { type: "image", src: imgKinoG, aspect: "aspect-[4/3]", caption: "Instagram post promoting the screening event." },
     ],
     description: ["The student collective focuses on promoting short films and bringing them closer to younger audiences. Each screening features the filmmakers, who present their work and participate in discussions moderated by students."],
     credits: [
@@ -215,13 +294,10 @@ const PROJECTS: Project[] = [
   },
 ];
 
-const LEFT_PROJECT_IDS = ["01", "03", "05"];
+const LEFT_PROJECT_IDS = ["07", "01", "03", "05"];
 const RIGHT_PROJECT_IDS = ["02", "04", "06"];
 
-const CATEGORY_ORDER: Record<"video" | "design", string[]> = {
-  video: ["04", "06", "02", "01", "03", "05"],
-  design: ["01", "02", "03", "05", "04", "06"],
-};
+
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -343,7 +419,7 @@ function Lightbox({
         </span>
         <button
           onClick={onClose}
-          className="text-[14px] text-white hover:opacity-50 transition-opacity cursor-pointer"
+          className="text-[14px] text-white hover:underline underline-offset-2 transition-all cursor-pointer"
           style={FONT}
         >
           (close)
@@ -376,7 +452,7 @@ function Lightbox({
           <button
             onClick={prev}
             disabled={index === 0}
-            className="text-[14px] text-white disabled:opacity-20 hover:opacity-50 transition-opacity cursor-pointer"
+            className="text-[14px] text-white disabled:opacity-20 hover:underline underline-offset-2 transition-all cursor-pointer"
             style={FONT}
           >
             ← prev
@@ -393,7 +469,7 @@ function Lightbox({
           <button
             onClick={next}
             disabled={index === items.length - 1}
-            className="text-[14px] text-white disabled:opacity-20 hover:opacity-50 transition-opacity cursor-pointer"
+            className="text-[14px] text-white disabled:opacity-20 hover:underline underline-offset-2 transition-all cursor-pointer"
             style={FONT}
           >
             next →
@@ -435,75 +511,68 @@ function HomeNav({
   menuOpen,
   setMenuOpen,
   onAbout,
-  activeCategory,
-  setActiveCategory,
+  category,
+  onCategory,
 }: {
   menuOpen: boolean;
   setMenuOpen: (v: boolean) => void;
   onAbout: () => void;
-  activeCategory: "video" | "design";
-  setActiveCategory: (v: "video" | "design") => void;
+  category: ProjectCategory | null;
+  onCategory: (category: ProjectCategory | null) => void;
 }) {
+  const categoryClass = (active: boolean) =>
+    `text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all cursor-pointer bg-transparent border-none p-0 ${
+      active ? "underline" : ""
+    }`;
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent h-[50px] flex items-center px-[14px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm h-[50px] flex items-center px-[14px]">
 
-  {/* Left */}
-  {/* Left */}
-<div className="flex items-center">
-  <span className="text-[14px] text-black" style={FONT}>
-    Petra Pavlić — Portfolio
-  </span>
-</div>
+      {/* Left — logo */}
+      <button
+        onClick={() => onCategory(null)}
+        className="text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all cursor-pointer bg-transparent border-none p-0"
+        style={FONT}
+      >
+        Petra Pavlić — Portfolio
+      </button>
 
-{/* Center — category navigation */}
-<nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
+      {/* Right — desktop navigation */}
+      <nav className="hidden md:flex items-center gap-10 ml-auto pr-[14px]">
+        <button
+          onClick={() => onCategory("design")}
+          className={categoryClass(category === "design")}
+          style={FONT}
+        >
+          design
+        </button>
 
-  <button
-    onClick={() => setActiveCategory("design")}
-    className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-      activeCategory === "design"
-        ? "text-black underline underline-offset-2"
-        : "text-black/40 hover:text-black hover:underline"
-    }`}
-    style={FONT}
-  >
-    design
-  </button>
+        <button
+          onClick={() => onCategory("video")}
+          className={categoryClass(category === "video")}
+          style={FONT}
+        >
+          videography
+        </button>
 
-  <button
-    onClick={() => setActiveCategory("video")}
-    className={`text-[14px] cursor-pointer bg-transparent border-none p-0 transition-opacity ${
-      activeCategory === "video"
-        ? "text-black underline underline-offset-2"
-        : "text-black/40 hover:text-black hover:underline"
-    }`}
-    style={FONT}
-  >
-    video
-  </button>
+        <button
+          onClick={onAbout}
+          className="text-[14px] text-black hover:underline underline-offset-2 transition-all cursor-pointer bg-transparent border-none p-0"
+          style={FONT}
+        >
+          about
+        </button>
 
-</nav>
-
-{/* Right */}
-<nav className="hidden md:flex items-center gap-10 ml-auto pr-[14px]">
-  <button
-    onClick={onAbout}
-    className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
-    style={FONT}
-  >
-    about
-  </button>
-
-  <a
-    href="https://www.instagram.com/pavlic.petra/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
-    style={FONT}
-  >
-    instagram
-  </a>
-</nav>
+        <a
+          href="https://www.instagram.com/pavlic.petra/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all"
+          style={FONT}
+        >
+          instagram
+        </a>
+      </nav>
 
       {/* Mobile menu button */}
       <button
@@ -511,26 +580,20 @@ function HomeNav({
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
-        <span
-          className={`block w-5 h-px bg-black transition-all duration-200 ${
-            menuOpen ? "rotate-45 translate-y-[6px]" : ""
-          }`}
-        />
-        <span
-          className={`block w-5 h-px bg-black transition-all duration-200 ${
-            menuOpen ? "opacity-0" : ""
-          }`}
-        />
-        <span
-          className={`block w-5 h-px bg-black transition-all duration-200 ${
-            menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
-          }`}
-        />
+        <span className={`block w-5 h-px bg-black transition-all duration-200 ${
+          menuOpen ? "rotate-45 translate-y-[6px]" : ""
+        }`} />
+        <span className={`block w-5 h-px bg-black transition-all duration-200 ${
+          menuOpen ? "opacity-0" : ""
+        }`} />
+        <span className={`block w-5 h-px bg-black transition-all duration-200 ${
+          menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+        }`} />
       </button>
 
       {/* Mobile dropdown */}
       <div
-        className={`md:hidden absolute top-[50px] left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-[rgba(0,0,0,0.06)] flex flex-col px-[14px] py-4 gap-4 transition-all duration-200 ${
+        className={`md:hidden absolute top-[50px] left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-[rgba(0,0,0,0.06)] flex flex-col px-[14px] py-4 gap-4 transition-all duration-200 ${
           menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -538,10 +601,10 @@ function HomeNav({
       >
         <button
           onClick={() => {
-            setActiveCategory("design");
+            onCategory("design");
             setMenuOpen(false);
           }}
-          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
+          className={categoryClass(category === "design")}
           style={FONT}
         >
           design
@@ -549,16 +612,14 @@ function HomeNav({
 
         <button
           onClick={() => {
-            setActiveCategory("video");
+            onCategory("video");
             setMenuOpen(false);
           }}
-          className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
+          className={categoryClass(category === "video")}
           style={FONT}
         >
-          video
+          videography
         </button>
-
-      
 
         <button
           onClick={() => {
@@ -568,14 +629,14 @@ function HomeNav({
           className="text-[14px] text-black text-left cursor-pointer bg-transparent border-none p-0"
           style={FONT}
         >
-          about me
+          about
         </button>
 
         <a
           href="https://www.instagram.com/pavlic.petra/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[14px] text-black no-underline"
+          className="text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all"
           style={FONT}
           onClick={() => setMenuOpen(false)}
         >
@@ -589,13 +650,17 @@ function HomeNav({
 function HomePage({
   onSelect,
   onAbout,
+  category,
+  onCategory,
 }: {
   onSelect: (p: Project) => void;
   onAbout: () => void;
+  category: ProjectCategory | null;
+  onCategory: (category: ProjectCategory | null) => void;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<"video" | "design">("design");
+  
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText("petra.pavlic3@gmail.com");
@@ -616,14 +681,17 @@ function HomePage({
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  const sortedProjects = [...PROJECTS].sort(
-  (a, b) =>
-    CATEGORY_ORDER[activeCategory].indexOf(a.id) -
-    CATEGORY_ORDER[activeCategory].indexOf(b.id)
+  const sortedProjects = category
+  ? PROJECTS.filter((project) => project.category === category)
+  : PROJECTS;
+
+const left = sortedProjects.filter((project) =>
+  LEFT_PROJECT_IDS.includes(project.id)
 );
 
-   const left = sortedProjects.filter((_, index) => index % 2 === 0);
-   const right = sortedProjects.filter((_, index) => index % 2 === 1);
+const right = sortedProjects.filter((project) =>
+  RIGHT_PROJECT_IDS.includes(project.id)
+);
 
   return (
     <div className="bg-white min-h-screen" style={FONT}>
@@ -631,8 +699,8 @@ function HomePage({
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         onAbout={onAbout}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
+        category={category}
+        onCategory={onCategory}
       />
 
   
@@ -664,7 +732,7 @@ function HomePage({
         <div className="flex items-center gap-2">
           <button
             onClick={copyEmail}
-            className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity text-left p-0 bg-transparent border-none cursor-pointer"
+            className="text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all text-left p-0 bg-transparent border-none cursor-pointer"
             style={FONT}
           >
             petra.pavlic3@gmail.com
@@ -683,7 +751,7 @@ function HomePage({
         <nav className="hidden md:flex items-center gap-10 pr-[14px]">
           <button
             onClick={onAbout}
-            className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer bg-transparent border-none p-0"
+            className="text-[14px] text-black hover:underline underline-offset-2 transition-all cursor-pointer bg-transparent border-none p-0"
             style={FONT}
           >
             about
@@ -693,7 +761,7 @@ function HomePage({
             href="https://www.instagram.com/pavlic.petra/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+            className="text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all"
             style={FONT}
           >
             instagram
@@ -707,18 +775,106 @@ function HomePage({
 // ─── Project detail page ──────────────────────────────────────────────────────
 
 const FOOTER_LINKS = [
-  { label: "about me", href: "#information" },
+  { label: "about", href: "#information" },
   { label: "instagram", href: "https://www.instagram.com/pavlic.petra/", external: true },
 ];
 
+
+function ProjectMediaFeed({
+  items,
+  projectTitle,
+  onImageClick,
+}: {
+  items: DetailItem[];
+  projectTitle: string;
+  onImageClick: (index: number) => void;
+}) {
+  return (
+    <div className="flex flex-col gap-[24px] w-full">
+      {items.map((item, i) => (
+        <ProjectMediaItem
+          key={i}
+          item={item}
+          index={i}
+          projectTitle={projectTitle}
+          onImageClick={onImageClick}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ProjectMediaItem({
+  item,
+  index,
+  projectTitle,
+  onImageClick,
+}: {
+  item: DetailItem;
+  index: number;
+  projectTitle: string;
+  onImageClick: (index: number) => void;
+}) {
+  const ref = useFadeIn();
+
+  return (
+    <div
+      ref={ref}
+      className="w-full"
+      style={FADE_INITIAL}
+    >
+      {item.type === "video" ? (
+        <div className={`relative w-full ${item.aspect || "aspect-video"} bg-[#111]`}>
+          <VimeoPlayer
+            url={item.videoUrl!}
+            title={projectTitle}
+          />
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={() => onImageClick(index)}
+          className="block w-full cursor-zoom-in"
+          aria-label={`Enlarge image ${index + 1}`}
+        >
+          <img
+            src={item.src}
+            alt={item.caption || `${projectTitle} — image ${index + 1}`}
+            className="block w-full h-auto object-contain"
+            loading="lazy"
+            draggable={false}
+          />
+        </button>
+      )}
+
+      {item.caption && (
+        <p
+          className="mt-[10px] text-[11px] text-black/50 leading-relaxed max-w-[500px]"
+          style={FONT}
+        >
+          {item.caption}
+        </p>
+      )}
+    </div>
+  );
+}
+
+
 function ProjectPage({ project, onClose }: { project: Project; onClose: () => void }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
   useEffect(() => {
     window.scrollTo(0, 0);
+
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && lightboxIndex === null) onClose();
+      if (e.key === "Escape") {
+        if (lightboxIndex !== null) {
+          setLightboxIndex(null);
+        } else {
+          onClose();
+        }
+      }
     };
+
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [onClose, lightboxIndex]);
@@ -728,10 +884,23 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
 
       {/* Top bar */}
       <header className="flex items-center justify-between px-[14px] h-[47px] shrink-0">
-        <span className="text-[14px] text-black" style={FONT}>{project.englishTitle}</span>
+        
+  <span
+  className="text-[14px]"
+  style={{
+    ...FONT,
+    color: "#000000",
+    opacity: 1,
+    filter: "none",
+    transition: "none",
+  }}
+>
+  {project.englishTitle}
+</span>
+
         <button
           onClick={onClose}
-          className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer"
+          className="text-[14px] text-black hover:underline underline-offset-2 transition-all cursor-pointer"
           style={FONT}
         >
           (close)
@@ -776,44 +945,25 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
           </div>
         </div>
 
-        {/* Right — images/video with pr-[14px] so right edge matches (close) button */}
-        <div className="order-1 md:order-2 md:w-[49.5%] flex flex-col gap-[12px] pr-[14px]">
-          {project.detailImages.map((item, i) => (
-            <motion.div
-              key={i}
-              className={`w-[82%] ml-auto ${item.aspect} relative overflow-hidden cursor-pointer group`}
-              onClick={() => setLightboxIndex(i)}
-            >
-              {item.type === "video" ? (
-                /* Video poster — click opens lightbox */
-                <div className="absolute inset-0 bg-[#111] flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-3">
-                    {/* Play icon */}
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="opacity-70 group-hover:opacity-100 transition-opacity">
-                      <circle cx="24" cy="24" r="23" stroke="white" strokeWidth="1.5" />
-                      <polygon points="19,15 37,24 19,33" fill="white" />
-                    </svg>
-                    <span className="text-white/60 text-[11px]" style={FONT}>play</span>
-                  </div>
-                </div>
-              ) : (
-                <img
-  src={item.src}
-  alt={item.caption || `${project.title} — image ${i + 1}`}
-  className="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-  loading={i === 0 ? "eager" : "lazy"}
-/>
-              )}
-            </motion.div>
-          ))}
-        </div>
+        
+
+{/* Right — vertically scrolling media feed */}
+<div className="order-1 md:order-2 md:w-[49.5%] pr-[14px]">
+  <ProjectMediaFeed
+    items={project.detailImages}
+    projectTitle={project.englishTitle}
+    onImageClick={setLightboxIndex}
+  />
+</div>
+
       </main>
+
 
       {/* Footer */}
       <footer className="flex items-center justify-between pl-[12px] pr-[14px] py-[14px]">
         <button
           onClick={onClose}
-          className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer"
+          className="text-[14px] text-black hover:underline underline-offset-2 transition-all cursor-pointer"
           style={FONT}
         >
           (return to projects)
@@ -823,7 +973,7 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
             <a key={label} href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+              className="text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all"
               style={FONT}>
               {label}
             </a>
@@ -831,15 +981,15 @@ function ProjectPage({ project, onClose }: { project: Project; onClose: () => vo
         </nav>
       </footer>
 
-      {/* Lightbox */}
       {lightboxIndex !== null && (
-        <Lightbox
-          items={project.detailImages}
-          initialIndex={lightboxIndex}
-          projectTitle={project.englishTitle}
-          onClose={() => setLightboxIndex(null)}
-        />
-      )}
+  <Lightbox
+    items={project.detailImages}
+    initialIndex={lightboxIndex}
+    projectTitle={project.englishTitle}
+    onClose={() => setLightboxIndex(null)}
+  />
+)}
+
     </div>
   );
 }
@@ -882,7 +1032,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
 
         <button
           onClick={onClose}
-          className="text-[14px] text-black hover:opacity-50 transition-opacity cursor-pointer"
+          className="text-[14px] text-black hover:underline underline-offset-2 transition-all cursor-pointer"
           style={FONT}
         >
           (close)
@@ -928,7 +1078,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
             <div className="flex items-center gap-2">
               <button
                 onClick={copyEmail}
-                className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity text-left p-0"
+                className="block text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all text-left p-0"
                 style={FONT}
               >
                 petra.pavlic3@gmail.com
@@ -948,7 +1098,7 @@ function AboutPage({ onClose }: { onClose: () => void }) {
               href="https://www.instagram.com/pavlic.petra/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-[14px] text-black no-underline hover:opacity-50 transition-opacity"
+              className="block text-[14px] text-black no-underline hover:underline underline-offset-2 transition-all"
               style={FONT}
             >
               pavlic.petra
@@ -983,11 +1133,23 @@ const getProjectFromPath = (): Project | null => {
   return PROJECTS.find((project) => project.slug === match[1]) ?? null;
 };
 
+const getCategoryFromPath = (): ProjectCategory | null => {
+  const path = window.location.pathname;
+
+  if (path === "/design") return "design";
+  if (path === "/videography") return "video";
+
+  return null;
+};
+
 export default function App() {
   const [activeProject, setActiveProject] = useState<Project | null>(
-    getProjectFromPath()
-  );
-  const [showAbout, setShowAbout] = useState(false);
+  getProjectFromPath()
+);
+const [activeCategory, setActiveCategory] = useState<ProjectCategory | null>(
+  getCategoryFromPath()
+);
+const [showAbout, setShowAbout] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = "hr";
@@ -996,6 +1158,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       setActiveProject(getProjectFromPath());
+      setActiveCategory(getCategoryFromPath());
       setShowAbout(false);
     };
 
@@ -1006,15 +1169,40 @@ export default function App() {
     };
   }, []);
 
-  const handleSelect = (p: Project) => {
-    window.history.pushState({}, "", `/projects/${p.slug}`);
-    setActiveProject(p);
-  };
+ const handleCategory = (category: ProjectCategory | null) => {
+  const path =
+    category === "design"
+      ? "/design"
+      : category === "video"
+      ? "/videography"
+      : "/";
 
-  const handleClose = () => {
-    window.history.pushState({}, "", "/");
-    setActiveProject(null);
-  };
+  window.history.pushState({}, "", path);
+
+  setActiveProject(null);
+  setActiveCategory(category);
+  setShowAbout(false);
+  window.scrollTo(0, 0);
+};
+
+const handleSelect = (p: Project) => {
+  window.history.pushState({}, "", `/projects/${p.slug}`);
+  setActiveProject(p);
+  window.scrollTo(0, 0);
+};
+
+const handleClose = () => {
+  const path =
+    activeCategory === "design"
+      ? "/design"
+      : activeCategory === "video"
+      ? "/videography"
+      : "/";
+
+  window.history.pushState({}, "", path);
+  setActiveProject(null);
+  window.scrollTo(0, 0);
+};
 
   const handleAbout = () => {
     setShowAbout(true);
@@ -1034,7 +1222,12 @@ export default function App() {
     ? <ProjectPage project={activeProject} onClose={handleClose} />
     : showAbout
     ? <AboutPage onClose={handleAboutClose} />
-    : <HomePage onSelect={handleSelect} onAbout={handleAbout} />;
+    : <HomePage
+    onSelect={handleSelect}
+    onAbout={handleAbout}
+    category={activeCategory}
+    onCategory={handleCategory}
+/>;
 
   return (
     <AnimatePresence mode="sync">
