@@ -8,6 +8,7 @@ import imgH2 from "@/imports/Homepage/c6a65768f09d5b965a1f4ec4bb1da05e44f59156.w
 import imgH3 from "@/imports/Homepage/66567dcdda9c9ec368fc2a3c46460dbb3531d190.webp";
 import imgH4 from "@/imports/Homepage/8b435e23e9d320d6b65f162147c4750cd5c79632.webp";
 
+/*
 // Project 01 detail images
 // Paromlin — Visual Identity
 import imgParomlin01 from "@/imports/Paromlin/paromlin logo.webp";
@@ -16,6 +17,7 @@ import imgParomlin03 from "@/imports/Paromlin/paromlin logo skraceni.webp";
 import imgParomlin04 from "@/imports/Paromlin/signalizacija.webp";
 import imgParomlin05 from "@/imports/Paromlin/plakati.webp";
 import imgParomlin06 from "@/imports/Paromlin/šal.webp";
+*/
 import imgP1a from "@/imports/ProjectInfo-1/9f388cccfa674d33df6f61bfeb4a12b845acb47c.webp";
 import imgP1b from "@/imports/ProjectInfo-1/1d102274b3a2914eb0577f013e3e1b77ef41ac3e.webp";
 import imgP1c from "@/imports/ProjectInfo-1/f8bbab8c44cd193c50b070de74db6ccdbb8807c0.webp";
@@ -70,7 +72,7 @@ interface Project {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const PROJECTS: Project[] = [
-    {
+    /*{
     id: "07",
     number: "07",
     title: "Paromlin — Meeting Point",
@@ -135,7 +137,7 @@ const PROJECTS: Project[] = [
       { label: "Designers", value: "Petra Pavlić, Victoria Bucul" },
       { label: "Year", value: "2026." }
     ],
-  },
+  },*/
   {
     id: "01",
     number: "01",
