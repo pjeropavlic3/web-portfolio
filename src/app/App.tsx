@@ -183,8 +183,8 @@ const PROJECTS: Project[] = [
     detailImages: [
       { type: "image", src: imgKinoA, aspect: "aspect-[2/3]", caption: "Open call poster for Kino A214." },
       { type: "image", src: imgKinoB, aspect: "aspect-[4/3]", caption: "Post-screening discussion with the filmmaker and student moderators." },
-      { type: "image", src: imgKinoC, aspect: "aspect-[4/3]", caption: "Tibor Đurđev (Žive slike, 2025.) in conversation with the audience during a Q&A session." },
-      { type: "image", src: imgKinoD, aspect: "aspect-[4/3]", caption: "Screening event with Mara Prpić (Žal, 2024.) students and guests gathered for the programme." },
+      { type: "image", src: imgKinoC, aspect: "aspect-[4/3]", caption: "In conversation with the audience during a Q&A session." },
+      { type: "image", src: imgKinoD, aspect: "aspect-[4/3]", caption: "Screening event (Žal, 2024.) students and guests gathered for the programme." },
       { type: "image", src: imgKinoE, aspect: "aspect-[4/3]", caption: "Screening poster of the short film 'Dobro jutro Hrvatska'." },
       { type: "image", src: imgKinoF, aspect: "aspect-[4/3]", caption: "Instagram post promoting the screening event." },
       { type: "image", src: imgKinoG, aspect: "aspect-[4/3]", caption: "Instagram post promoting the screening event." },
